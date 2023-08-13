@@ -1,8 +1,7 @@
 {
-  "Hello World!":
-  {
-    "prefix":"hello",
-    "body":[
+  "Hello World!": {
+    "prefix": "hello",
+    "body": [
       "std::cout<<\"Hello, world!\"<<std::endl;"
     ]
   }

@@ -1,0 +1,13 @@
+{
+  "name": "VSCode Snippet Manager",
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "cpp"
+        ],
+        "path": "./cpp.json"
+      }
+    ]
+  }
+}
