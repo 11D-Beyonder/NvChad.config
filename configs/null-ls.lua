@@ -4,5 +4,8 @@ null_ls.setup {
   debug = true,
   sources = {
     formatting.stylua,
+    formatting.clang_format.with({
+      extra_args={"--style={BasedOnStyle: Microsoft, IndentWidth: 4}"}
+    }),
   },
 }

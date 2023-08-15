@@ -1,4 +1,4 @@
-# NVChad Config
+# NVChad Configuration
 
 ## Rules of Configuration
 
