@@ -17,11 +17,11 @@ return {
     config = {
       update_interval = 1000,
       set_dark_mode = function()
-        change_theme("everforest")
+        change_theme "everforest"
       end,
       set_light_mode = function()
-        change_theme("everforest_light")
+        change_theme "everforest_light"
       end,
     },
-  }
+  },
 }

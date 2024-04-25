@@ -1,5 +1,8 @@
 return {
-  "zapling/mason-conform.nvim",
+  {
+    "zapling/mason-conform.nvim",
+    config = true,
+  },
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
