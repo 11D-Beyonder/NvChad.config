@@ -8,9 +8,6 @@ M.ui = {
   lsp = {
     signature = false
   },
-  theme = "everforest_light",
-  theme_toggle = { "everforest_light", "everforest" }
 }
 
 return M
-

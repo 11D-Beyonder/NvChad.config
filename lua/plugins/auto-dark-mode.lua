@@ -8,8 +8,6 @@ local change_theme = function(theme)
     vim.g.toggle_theme_icon = "   "
   end
   nvconfig.ui.theme = theme
-  local old_theme = dofile(vim.fn.stdpath "config" .. "/lua/chadrc.lua").ui.theme
-  require("nvchad.utils").replace_word('theme = "' .. old_theme, 'theme = "' .. nvconfig.ui.theme)
   require("base46").load_all_highlights()
 end
 
