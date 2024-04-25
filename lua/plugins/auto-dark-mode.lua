@@ -1,5 +1,5 @@
 local change_theme = function(theme)
-  local nvconfig = require("nvconfig")
+  local nvconfig = require "nvconfig"
   if string.match(theme, "light$") then
     vim.g.icon_toggled = false
     vim.g.toggle_theme_icon = "   "

@@ -6,7 +6,7 @@ local M = {}
 
 M.ui = {
   lsp = {
-    signature = false
+    signature = false,
   },
 }
 
