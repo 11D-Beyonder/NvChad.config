@@ -2,38 +2,14 @@ local cmp = require "cmp"
 return {
   {
     "hrsh7th/nvim-cmp",
-    event = { "InsertEnter", "CmdlineEnter" },
+    event = "InsertEnter",
     dependencies = {
-      {
-        "hrsh7th/cmp-cmdline",
-        event = "CmdlineEnter",
-        config = function()
-          cmp.setup.cmdline("/", {
-            mapping = cmp.mapping.preset.cmdline(),
-            sources = {
-              { name = "buffer" },
-            },
-          })
-          cmp.setup.cmdline(":", {
-            mapping = cmp.mapping.preset.cmdline(),
-            sources = cmp.config.sources({
-              { name = "path" },
-            }, {
-              {
-                name = "cmdline",
-                option = {
-                  ignore_cmds = { "Man", "!" },
-                },
-              },
-            }),
-          })
-        end,
-      },
+
       "kdheepak/cmp-latex-symbols",
     },
     opts = {
       completion = {
-        completeopt = "menuone,noinsert,noselect"
+        completeopt = "menuone,noinsert,noselect",
       },
       mapping = {
         ["<Up>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
@@ -50,12 +26,40 @@ return {
         ["<CR>"] = cmp.mapping.confirm { select = false },
       },
       sources = require("cmp").config.sources {
-        { name = "nvim_lsp",      priority = 9 },
-        { name = "luasnip",       priority = 8 },
-        { name = "buffer",        priority = 7 },
-        { name = "path",          priority = 6 },
+        { name = "nvim_lsp", priority = 9 },
+        { name = "luasnip", priority = 8 },
+        { name = "buffer", priority = 7 },
+        { name = "path", priority = 6 },
         { name = "latex_symbols", priority = 5, option = { strategy = 0 } },
       },
     },
+  },
+  {
+    "hrsh7th/cmp-cmdline",
+    event = "CmdlineEnter",
+    dependencies = {
+      "hrsh7th/nvim-cmp",
+    },
+    config = function()
+      cmp.setup.cmdline("/", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = "buffer" },
+        },
+      })
+      cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = "path" },
+        }, {
+          {
+            name = "cmdline",
+            option = {
+              ignore_cmds = { "Man", "!" },
+            },
+          },
+        }),
+      })
+    end,
   },
 }
