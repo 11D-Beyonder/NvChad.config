@@ -15,7 +15,7 @@ return {
   {
     "f-person/auto-dark-mode.nvim",
     config = {
-      update_interval = 1000,
+      update_interval = 500,
       set_dark_mode = function()
         change_theme "everforest"
       end,
