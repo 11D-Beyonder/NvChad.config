@@ -15,9 +15,9 @@ return {
       },
     },
     keys = {
-      { "<leader>ss", "<cmd>VenvSelect<cr>", desc = "选择venc" },
+      { "<leader>vs", "<cmd>VenvSelect<cr>", desc = "[V]env [S]elect" },
       -- NOTE: Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
-      { "<leader>vc", "<cmd>VenvSelectCached<cr>" },
+      { "<leader>vc", "<cmd>VenvSelectCached<cr>", desc = "[V]env Select [C]ached" },
     },
   },
 }

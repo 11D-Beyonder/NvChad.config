@@ -1,5 +1,4 @@
 return {
-
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -7,7 +6,7 @@ return {
         "lua",
         "rust",
         "python",
-        "cpp"
+        "cpp",
       },
     },
   },

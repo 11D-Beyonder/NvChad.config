@@ -9,6 +9,7 @@ map("n", "<leader>fg", "<cmd>Telescope git_commits<CR>", { desc = "telescope git
 map("n", "<leader>fs", "<cmd>Telescope git_status<CR>", { desc = "telescope git status" })
 map("n", "<leader>ft", "<cmd>Telescope terms<CR>", { desc = "telescope pick hidden term" })
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
+map("n", "<leader>fn", "<cmd>NoiceTelescope<cr>", { desc = "[F]ind [N]otifies" })
 map(
   "n",
   "<leader>fa",
