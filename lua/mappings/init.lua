@@ -1,0 +1,6 @@
+require "mappings.buffer"
+require "mappings.debug"
+require "mappings.editor"
+require "mappings.filetree"
+require "mappings.finder"
+require "mappings.terminal"
