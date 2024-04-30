@@ -11,7 +11,7 @@ map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 map("n", "<leader>ld", vim.diagnostic.open_float, { desc = "lsp floating diagnostics" })
 map("n", "[d", vim.diagnostic.goto_prev, { desc = "lsp prev diagnostic" })
 map("n", "]d", vim.diagnostic.goto_next, { desc = "lsp next diagnostic" })
-map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "lsp diagnostic loclist" })
+map("n", "<leader>lD", vim.diagnostic.setloclist, { desc = "lsp diagnostic loclist" })
 map("n", "<leader>lf", function()
   require("conform").format { timeout = 3000, lsp_fallback = true }
 end, { desc = "format files" })
