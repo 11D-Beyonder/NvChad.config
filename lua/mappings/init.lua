@@ -1,5 +1,5 @@
 require "mappings.buffer"
-require "mappings.debug"
+require "mappings.debugger"
 require "mappings.editor"
 require "mappings.filetree"
 require "mappings.finder"
