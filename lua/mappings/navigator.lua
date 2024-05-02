@@ -1,0 +1,31 @@
+local map = vim.keymap.set
+map("n", "<tab>", function()
+  require("nvchad.tabufline").next()
+end, { desc = "buffer goto next" })
+map("n", "<S-tab>", function()
+  require("nvchad.tabufline").prev()
+end, { desc = "buffer goto prev" })
+map("n", "]b", function()
+  require("nvchad.tabufline").next()
+end, { desc = "buffer goto next" })
+map("n", "[b", function()
+  require("nvchad.tabufline").prev()
+end, { desc = "buffer goto prev" })
+-- TODO: Tab切换
+
+map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "resize split up" })
+map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "resize split down" })
+map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "resize split left" })
+map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "resize split right" })
+
+map("n", "|", "<cmd>vsplit<cr>", { desc = "vertical split" })
+map("n", "_", "<cmd>split<cr>", { desc = "horizontal split" })
+
+map("n", "<C-h>", "<C-w>h", { desc = "switch window left" })
+map("n", "<C-l>", "<C-w>l", { desc = "switch window right" })
+map("n", "<C-j>", "<C-w>j", { desc = "switch window down" })
+map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
+map("n", "<C-w>+", "<cmd>WindowsMaximize<cr>", { desc = "maximize window" })
+map("n", "<C-w>_", "<cmd>WindowsMaximizeVertically<cr>", { desc = "maximize window vertically" })
+map("n", "<C-w>|", "<cmd>WindowsMaximizeHorizontally<cr>", { desc = "maximize window horizontally" })
+map("n", "<C-w>=", "<cmd>WindowsEqualize<cr>", { desc = "eqaulize windows" })

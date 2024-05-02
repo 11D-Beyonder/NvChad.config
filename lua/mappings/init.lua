@@ -1,6 +1,6 @@
-require "mappings.buffer"
 require "mappings.debugger"
 require "mappings.editor"
 require "mappings.filetree"
 require "mappings.finder"
+require "mappings.navigator"
 require "mappings.terminal"
