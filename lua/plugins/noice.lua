@@ -2,6 +2,8 @@ return {
   "folke/noice.nvim",
   opts = {
     lsp = {
+      hover = { enabled = false },
+      signature = { enabled = false },
       override = {
         ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
         ["vim.lsp.util.stylize_markdown"] = true,
@@ -17,7 +19,6 @@ return {
     },
     popupmenu = {
       enabled = false,
-      backend = "cmp",
     },
   },
   dependencies = {

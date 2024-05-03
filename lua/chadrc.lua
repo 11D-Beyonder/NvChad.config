@@ -2,7 +2,7 @@ local M = {}
 
 M.ui = {
   lsp = {
-    signature = false,
+    signature = true,
   },
   nvdash = {
     load_on_startup = true,
