@@ -17,8 +17,10 @@ require("lazy").setup({
       require "options"
     end,
   },
-
-  { import = "plugins" },
+  { import = "plugins/core" },
+  { import = "plugins/enhancements" },
+  { import = "plugins/ui" },
+  { import = "plugins/langpacks" },
 }, require "configs.lazy")
 
 dofile(vim.g.base46_cache .. "defaults")
