@@ -1,6 +1,7 @@
 local map = vim.keymap.set
 local dap = require "dap"
 local ui = require "dapui"
+local telescope = require("telescope").extensions.dap
 
 map("n", "<F5>", function()
   dap.continue()
@@ -92,3 +93,6 @@ map("n", "<leader>dH", function()
     end
   end)
 end, { desc = "hover evaluation of expression" })
+
+map("n", "<leader>dl", telescope.list_breakpoints, { desc = "list breakpoints" })
+map("n", "<leader>dL", telescope.configurations, { desc = "list configurations" })
