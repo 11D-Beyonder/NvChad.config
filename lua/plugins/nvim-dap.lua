@@ -43,18 +43,6 @@ return {
     end,
   },
   {
-    "jay-babu/mason-nvim-dap.nvim",
-    dependencies = {
-      "williamboman/mason.nvim",
-      "mfussenegger/nvim-dap",
-    },
-    opts = {
-      ensure_installed = {
-        "python",
-      },
-    },
-  },
-  {
     "mfussenegger/nvim-dap-python",
     dependencies = "mfussenegger/nvim-dap",
     ft = "python",

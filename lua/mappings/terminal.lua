@@ -1,5 +1,5 @@
 local map = vim.keymap.set
-map("t", "<C-x>", "<C-\\><C-N>", { desc = "escape terminal mode" })
+map("t", "<esc>", "<C-\\><C-N>", { desc = "escape terminal mode" })
 map("n", "<leader>tH", function()
   require("nvchad.term").new { pos = "sp" }
 end, { desc = "new horizontal term" })
@@ -16,14 +16,13 @@ map({ "n" }, "<leader>tf", function()
   require("nvchad.term").toggle { pos = "float", id = "floatTerm" }
 end, { desc = "toggle floating term" })
 map("n", "<leader>tg", function()
-  require("nvchad.term").runner {
-    pos = "float",
-    id = "floatGit",
+  require("nvchad.term").toggle {
+    pos = "vsp",
+    id = "lazygit",
     cmd = "lazygit",
-    float_opts = { border = "double" },
   }
 end, { desc = "toggle lazygit" })
-map("t", "<C-q>", function()
+map("t", "<esc><esc>", function()
   local win = vim.api.nvim_get_current_win()
   vim.api.nvim_win_close(win, true)
 end, { desc = "close term in terminal mode" })
