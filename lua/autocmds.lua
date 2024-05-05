@@ -1,6 +1,5 @@
 require "nvchad.autocmds"
-local autocmd = vim.api.nvim_create_autocmd
-autocmd({ "TextYankPost" }, {
+vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   pattern = "*",
   callback = function()
     vim.highlight.on_yank {
@@ -8,7 +7,7 @@ autocmd({ "TextYankPost" }, {
     }
   end,
 })
-autocmd("VimEnter", {
+vim.api.nvim_create_autocmd("VimEnter", {
   pattern = "*",
   callback = function()
     for _, file in ipairs { "pyproject.toml", "requirements.txt", "main.py" } do
@@ -20,4 +19,32 @@ autocmd("VimEnter", {
     end
   end,
   once = true,
+})
+
+vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = "LspAttach_inlayhints",
+  callback = function(args)
+    local bufnr = args.buf
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    local map = vim.keymap.set
+    local telescope = require "telescope.builtin"
+    local function opts(desc)
+      return { buffer = bufnr, desc = desc }
+    end
+    map("n", "gD", vim.lsp.buf.declaration, opts "go to declaration")
+    map("n", "gd", telescope.lsp_definitions, opts "go to definition")
+    map("n", "gr", telescope.lsp_references, opts "go to references")
+    map("n", "gt", telescope.lsp_type_definitions, opts "go to type definition")
+    map("n", "gh", vim.lsp.buf.hover, opts "go to hovered information")
+    map("n", "<leader>ls", vim.lsp.buf.signature_help, opts "show signature help")
+    map("n", "<leader>lr", function()
+      require "nvchad.lsp.renamer"()
+    end, opts "rename")
+    map({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, opts "code action")
+    require("lsp-inlayhints").on_attach(client, bufnr)
+    if require("nvconfig").ui.lsp.signature and client.server_capabilities.signatureHelpProvider then
+      require("nvchad.lsp.signature").setup(client, bufnr)
+    end
+  end,
 })

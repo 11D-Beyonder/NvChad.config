@@ -35,6 +35,7 @@ map("n", "<leader>tr", function()
       local ft_cmds = {
         python = "python " .. file,
         cpp = "g++ -o out " .. file .. " && ./out",
+        rust = "cargo run",
       }
       return ft_cmds[vim.bo.ft]
     end,
