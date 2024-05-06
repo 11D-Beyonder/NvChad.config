@@ -36,7 +36,18 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("n", "gd", telescope.lsp_definitions, opts "go to definition")
     map("n", "gr", telescope.lsp_references, opts "go to references")
     map("n", "gt", telescope.lsp_type_definitions, opts "go to type definition")
-    map("n", "gh", vim.lsp.buf.hover, opts "go to hovered information")
+    map("n", "gh", function()
+      local filetype = vim.bo.filetype
+      if vim.tbl_contains({ "vim", "help" }, filetype) then
+        vim.cmd("h " .. vim.fn.expand "<cword>")
+      elseif vim.tbl_contains({ "man" }, filetype) then
+        vim.cmd("Man " .. vim.fn.expand "<cword>")
+      elseif vim.fn.expand "%:t" == "Cargo.toml" and require("crates").popup_available() then
+        require("crates").show_crate_popup()
+      else
+        vim.lsp.buf.hover()
+      end
+    end, opts "go to hovered information")
     map("n", "<leader>ls", vim.lsp.buf.signature_help, opts "show signature help")
     map("n", "<leader>lr", function()
       require "nvchad.lsp.renamer"()

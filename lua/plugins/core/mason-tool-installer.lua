@@ -7,6 +7,7 @@ return {
         "lua-language-server",
         "rust-analyzer",
         "pyright",
+        "taplo",
         -- Formatter
         "isort",
         "black",

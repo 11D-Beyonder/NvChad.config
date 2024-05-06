@@ -7,6 +7,7 @@ return {
         "rust",
         "python",
         "cpp",
+        "toml",
       },
     },
   },
