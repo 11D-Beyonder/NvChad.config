@@ -8,6 +8,7 @@ return {
         "rust-analyzer",
         "pyright",
         "taplo",
+        "json-lsp",
         -- Formatter
         "isort",
         "black",
