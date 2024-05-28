@@ -19,7 +19,7 @@ map("n", "<F6>", dap.pause, { desc = "pause" })
 map("n", "<leader>dp", dap.pause, { desc = "pause (F6)" })
 map("n", "<leader>dq", dap.close, { desc = "close session" })
 
-map("n", "<F9>", dap.toggle_breakpoint, { desc = { "toggle break,point" } })
+map("n", "<F9>", dap.toggle_breakpoint, { desc = "toggle break,point" })
 map("n", "<leader>db", dap.toggle_breakpoint, { desc = "toggle breakpoint (F9)" })
 
 map("n", "<leader>dx", dap.clear_breakpoints, { desc = "clear breakpoints" })
