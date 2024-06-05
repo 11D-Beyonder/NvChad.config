@@ -1,6 +1,9 @@
 local map = vim.keymap.set
 map("n", "<leader>w", "<cmd>w<CR>", { desc = "file save" })
 map("n", "<leader>y", "<cmd>%y+<CR>", { desc = "file copy whole" })
+map("n", "<leader>x", function()
+  require("nvchad.tabufline").close_buffer()
+end, { desc = "buffer close" })
 map("i", "<C-b>", "<ESC>^i", { desc = "move beginning of line" })
 map("i", "<C-e>", "<End>", { desc = "move end of line" })
 map("i", "<C-h>", "<Left>", { desc = "move left" })
