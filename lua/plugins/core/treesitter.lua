@@ -8,6 +8,8 @@ return {
         "python",
         "cpp",
         "toml",
+        "html",
+        "java",
       },
     },
   },

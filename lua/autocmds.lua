@@ -21,9 +21,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
   once = true,
 })
 
-vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
 vim.api.nvim_create_autocmd("LspAttach", {
-  group = "LspAttach_inlayhints",
+  pattern = "*",
   callback = function(args)
     local bufnr = args.buf
     local client = vim.lsp.get_client_by_id(args.data.client_id)
@@ -53,7 +52,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
       require "nvchad.lsp.renamer"()
     end, opts "rename")
     map({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, opts "code action")
-    require("lsp-inlayhints").on_attach(client, bufnr)
     if require("nvconfig").ui.lsp.signature and client.server_capabilities.signatureHelpProvider then
       require("nvchad.lsp.signature").setup(client, bufnr)
     end

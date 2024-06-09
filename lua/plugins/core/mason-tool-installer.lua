@@ -9,12 +9,15 @@ return {
         "pyright",
         "taplo",
         "json-lsp",
+        "jdtls",
+        "lemminx",
         -- Formatter
         "isort",
         "black",
         -- DAP
         "debugpy",
         "codelldb",
+        "java-debug-adapter",
       },
     },
   },
