@@ -11,6 +11,7 @@ return {
         "json-lsp",
         "jdtls",
         "lemminx",
+        "clangd",
         -- Formatter
         "isort",
         "black",

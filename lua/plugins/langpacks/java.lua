@@ -22,6 +22,7 @@ return {
       end
 
       return {
+        capabilities = require("nvchad.configs.lspconfig").capabilities,
         cmd = {
           "java",
           "-Declipse.application=org.eclipse.jdt.ls.core.id1",

@@ -6,6 +6,7 @@ return {
         "lua",
         "rust",
         "python",
+        "c",
         "cpp",
         "toml",
         "html",
