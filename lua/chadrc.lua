@@ -1,6 +1,8 @@
 local M = {}
 
 M.ui = {
+	theme_toggle = { "everforest", "everforest_light" },
+	theme = "everforest",
 	lsp = {
 		signature = true,
 	},
